@@ -40,7 +40,7 @@ driver.find_element("id","edit-name").send_keys("wannes.dewulf@ugent.be",Keys.TA
 
 driver.find_element(By.LINK_TEXT, "Content").click()
 
-driver.find_element(By.LINK_TEXT, "Automatisation test").click()
+driver.find_element(By.LINK_TEXT, questionnaire).click()
 
 driver.find_element(By.LINK_TEXT, "Edit").click()
 
