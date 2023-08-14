@@ -9,6 +9,14 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 import time
 import math
 
+#-----------------------------------------------------
+data = pd.read_excel('Biocheck_To Ghent_pigfarms_FI_2021_2022.xlsx', sheet_name= 'Data 2021')
+offset = 21 #excel rij - 2, laatste getal in site, reeks die je wil toevoegen - 1
+species = 'Pigs'
+username = 'name@organisation.com'
+password = 'password'
+#----------------------------------------------------
+
 # Open site
 # open google driver
 PATH = "C:\Program Files (x86)\chromedriver.exe"
@@ -23,15 +31,9 @@ def inloggen():
     # time.sleep(5)
 
     #input credentials
-    driver.find_element("id", "edit-name").send_keys("wannes.dewulf@ugent.be", Keys.TAB, 'wannesdewulf12', Keys.RETURN)
+    driver.find_element("id", "edit-name").send_keys(username, Keys.TAB, password, Keys.RETURN)
 
 inloggen()
-
-#-----------------------------------------------------
-data = pd.read_excel('Biocheck_To Ghent_pigfarms_FI_2021_2022.xlsx', sheet_name= 'Data 2021')
-offset = 21 #excel rij - 2, laatste getal in site, reeks die je wil toevoegen - 1
-species = 'Pigs'
-#----------------------------------------------------
 
 numberofrows = data.shape[0]
 
